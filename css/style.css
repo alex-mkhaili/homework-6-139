@@ -11,13 +11,15 @@
     position: absolute;
     left: 38%;
     top: 35%;
+    animation: iceberg 3s linear infinite alternate;
 }
 .titanic {
     position: absolute;
     left: 0;
     top: 29%;
     width: 500px;
-    transform: rotateY(180deg)
+    transform: rotateY(180deg);
+    animation: titanic 5s ease-out forwards;
 }
 .moon {
     width: 140px;
@@ -25,6 +27,7 @@
     right: 38%;
     top: 40px;
     z-index: 100;
+    animation: moon 5s linear infinite alternate;
 }
 .sky {
     position: absolute;
@@ -40,7 +43,7 @@
     top: 50px;
     height: 140px;
     z-index: 100;
-    transform: rotate(180deg)
+    animation: stars 1.5s infinite ease  alternate 500ms;
 }
 .stars2 {
     position: absolute;
@@ -48,18 +51,50 @@
     top: 10px;
     height: 120px;
     z-index: 100;
+    animation: stars 1.5s infinite ease  alternate 1.5s;
 }
-.clouds1 {
+.cloud1 {
     position: absolute;
     top: 22px;
     left: 26%;
     height: 160px;
+    animation: first-cloud 8s infinite linear alternate;
 }
-.clouds2 {
+.cloud2 {
     position: absolute;
     top: 40px;
     right: 0;
     height: 160px;
+    animation: second-cloud 5s infinite linear alternate;
 }
 
 /* Keyframes */
+
+@keyframes stars {
+    0% {transform: scale(1)}
+    100% {transform: scale(1.2)}
+}
+@keyframes first-cloud {
+    0% {transform: translate(0px)}
+    100% { transform: translate(-280px)}
+}
+@keyframes second-cloud {
+    0% {transform: translate(0px)}
+    100% {transform: translate(-100px)}
+}
+@keyframes moon {
+    0% {transform: rotate(0deg)}
+    30% {transform: rotate(6deg);}
+    100% {transform: rotate(-10deg)}
+}
+@keyframes iceberg {
+    0% {top: 35%;}
+    25% {top: 34.5%;}
+    50% {top: 35%}
+    75% {top: 35.5%}
+    100% {top: 35%}
+}
+@keyframes titanic {
+    0% { left: 0;}
+    100% {left: 22%;}
+}
