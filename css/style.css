@@ -16,10 +16,9 @@
 .titanic {
     position: absolute;
     left: 0;
-    top: 29%;
-    width: 500px;
-    transform: rotateY(180deg);
-    animation: titanic 5s ease-out forwards;
+    top: 33%;
+    width: 400px;
+    animation: titanic 5s forwards, damaged-titanic 8s linear 5s forwards;
 }
 .moon {
     width: 140px;
@@ -95,6 +94,12 @@
     100% {top: 35%}
 }
 @keyframes titanic {
-    0% { left: 0;}
-    100% {left: 22%;}
+    0% {left: 0}
+    100% {left: 23%}
+}
+
+@keyframes damaged-titanic {
+    0% {transform: translateX(0);}
+    50% {left: 28%; transform: rotate(20deg);}
+    100% {transform: translateY(400px);}
 }
